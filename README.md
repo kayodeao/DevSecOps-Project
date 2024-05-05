@@ -26,15 +26,15 @@
 
 ### **Phase 1: Initial Setup and Deployment**
 
-**Step 1: Launch EC2 (Ubuntu 22.04):**
+**Step 1: Launch Linode (Ubuntu 22.04):**
 
-- Provision an EC2 instance on AWS with Ubuntu 22.04.
-- Connect to the instance using SSH.
+- Provision a VM instance on Linode with Ubuntu 22.04 image.
+- Connect to the instance using SSH, open you terminnal and run this command ``` ssh root@<vm-ip>```.
 
 **Step 2: Clone the Code:**
 
 - Update all the packages and then clone the code.
-- Clone your application's code repository onto the EC2 instance:
+- Clone your application's code repository onto the Linode VM instance:
     
     ```bash
     git clone https://github.com/N4si/DevSecOps-Project.git
@@ -43,7 +43,7 @@
 
 **Step 3: Install Docker and Run the App Using a Container:**
 
-- Set up Docker on the EC2 instance:
+- Set up Docker on the Linode instance:
     
     ```bash
     
@@ -85,7 +85,7 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
 **Phase 2: Security**
 
 1. **Install SonarQube and Trivy:**
-    - Install SonarQube and Trivy on the EC2 instance to scan for vulnerabilities.
+    - Install SonarQube and Trivy on the Linode instance to scan for vulnerabilities.
         
         sonarqube
         ```
@@ -110,6 +110,12 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
         ```
         trivy image <imageid>
         ```
+
+       to perform a filesystem scan using trivy
+      ```
+      trivy fs .
+      ```
+      
         
         
 2. **Integrate SonarQube and Configure:**
@@ -119,7 +125,7 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
 **Phase 3: CI/CD Setup**
 
 1. **Install Jenkins for Automation:**
-    - Install Jenkins on the EC2 instance to automate deployment:
+    - Install Jenkins on the Linode instance to automate deployment:
     Install Java
     
     ```bash
@@ -142,7 +148,7 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
     sudo systemctl enable jenkins
     ```
     
-    - Access Jenkins in a web browser using the public IP of your EC2 instance.
+    - Access Jenkins in a web browser using the public IP of your Linode instance.
         
         publicIp:8080
         
@@ -754,5 +760,5 @@ To deploy an application with ArgoCD, you can follow these steps, which I'll out
 
 **Phase 7: Cleanup**
 
-1. **Cleanup AWS EC2 Instances:**
-    - Terminate AWS EC2 instances that are no longer needed.
+1. **Cleanup AWS Linode Instances:**
+    - Terminate AWS Linode instances that are no longer needed.
