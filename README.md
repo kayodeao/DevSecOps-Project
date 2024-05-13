@@ -692,9 +692,10 @@ That's it! You've successfully installed and set up Grafana to work with Prometh
 
 # Phase 6: Kubernetes
 
-## Create Kubernetes Cluster with Nodegroups
+## Create Kubernetes in Linode 
 
-In this phase, you'll set up a Kubernetes cluster with node groups. This will provide a scalable environment to deploy and manage your applications.
+In this phase, you'll set up a Kubernetes cluster with Linode groups. This will provide a scalable environment to deploy and manage your applications.
+
 
 ## Monitor Kubernetes with Prometheus
 
